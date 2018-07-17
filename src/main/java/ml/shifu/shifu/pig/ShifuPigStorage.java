@@ -1,5 +1,5 @@
 /*
- * Copyright [2013-2017] PayPal Software Foundation
+ * Copyright [2013-2018] PayPal Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,20 @@
  */
 package ml.shifu.shifu.pig;
 
-import org.apache.pig.piggybank.storage.CSVExcelStorage;
-import org.apache.pig.builtin.PigStorage;
-import org.apache.pig.data.Tuple;
-import org.apache.pig.ResourceSchema;
 import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.InputFormat;
 import org.apache.hadoop.mapreduce.RecordWriter;
+
+import org.apache.pig.piggybank.storage.CSVExcelStorage;
+import org.apache.pig.builtin.PigStorage;
+import org.apache.pig.data.Tuple;
+import org.apache.pig.ResourceSchema;
 import org.apache.pig.impl.logicalLayer.FrontendException;
 import org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigSplit;
 
 import java.io.IOException;
 import java.util.List;
-
 
 public class ShifuPigStorage extends PigStorage {
 
