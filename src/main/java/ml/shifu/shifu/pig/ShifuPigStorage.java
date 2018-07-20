@@ -18,6 +18,7 @@ package ml.shifu.shifu.pig;
 import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.InputFormat;
+import org.apache.hadoop.mapreduce.OutputFormat;
 import org.apache.hadoop.mapreduce.RecordWriter;
 
 import org.apache.pig.piggybank.storage.CSVExcelStorage;
@@ -104,5 +105,27 @@ public class ShifuPigStorage extends PigStorage {
     @Override
     public void checkSchema(ResourceSchema s) throws IOException { 
         shifuStorage.checkSchema(s);
+    }
+
+    @Override
+    public void storeSchema(ResourceSchema schema, String location,
+        Job job) throws IOException {
+        shifuStorage.storeSchema(schema, location, job);
+    }
+
+    @Override
+    public ResourceSchema getSchema(String location,
+        Job job) throws IOException {
+        return shifuStorage.getSchema(location, job);
+    }
+    
+    @Override
+    public OutputFormat getOutputFormat() {
+        return shifuStorage.getOutputFormat();
+    }
+
+    @Override
+    public void setStoreLocation(String location, Job job) throws IOException {
+        shifuStorage.setStoreLocation(location, job);
     }
 }
