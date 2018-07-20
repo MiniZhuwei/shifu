@@ -67,6 +67,7 @@ public class ShifuPigStorage extends PigStorage {
         shifuStorage.setLocation(location, job);
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public InputFormat getInputFormat() {
         return shifuStorage.getInputFormat();
@@ -97,6 +98,7 @@ public class ShifuPigStorage extends PigStorage {
         return shifuStorage.getFeatures();
     }
     
+    @SuppressWarnings("rawtypes")
     @Override
     public void prepareToWrite(RecordWriter writer) {
         shifuStorage.prepareToWrite(writer);
